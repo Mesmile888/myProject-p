@@ -1,0 +1,82 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-msedge",
+            "name": "Launch Microsoft Edge",
+            "request": "launch",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ],
+            "url": "http://localhost:8001",
+            "webRoot": "${workspaceFolder}",
+            "presentation": {
+                "hidden": true
+            },
+            "smartStep": true, //自动跳过未映射的代码
+            "skipFiles": [
+                "<node_internals>/**/*.js", //跳过node核心模块代码
+                "${workspaceFolder}/node_modules/**/*.js",
+                "${workspaceFolder}/src/node_modules/**/*.js",
+                "${workspaceFolder}/src/asserts/js/webpack:/app/webpack/**", //忽略webpack源码
+                "${workspaceFolder}/src/asserts/js/webpack:/app/node_modules/**" //忽略各种包文件源码
+            ] //跳过文件
+        },
+        {
+            "type": "pwa-msedge",
+            "name": "Launch Microsoft Edge in headless mode",
+            "request": "launch",
+            "runtimeArgs": [
+                "--headless",
+                "--remote-debugging-port=9222"
+            ],
+            "url": "http://localhost:8001",
+            "webRoot": "${workspaceFolder}",
+            "presentation": {
+                "hidden": true
+            },
+            "smartStep": true, //自动跳过未映射的代码
+            "skipFiles": [
+                "<node_internals>/**/*.js", //跳过node核心模块代码
+                "${workspaceFolder}/node_modules/**/*.js",
+                "${workspaceFolder}/src/node_modules/**/*.js",
+                "${workspaceFolder}/src/asserts/js/webpack:/app/webpack/**", //忽略webpack源码
+                "${workspaceFolder}/src/asserts/js/webpack:/app/node_modules/**" //忽略各种包文件源码
+            ] //跳过文件
+        },
+        {
+            "type": "vscode-edge-devtools.debug",
+            "name": "Open Edge DevTools",
+            "request": "attach",
+            "url": "http://localhost:8001",
+            "webRoot": "${workspaceFolder}",
+            "presentation": {
+                "hidden": true
+            },
+            "smartStep": true, //自动跳过未映射的代码
+            "skipFiles": [
+                "<node_internals>/**/*.js", //跳过node核心模块代码
+                "${workspaceFolder}/node_modules/**/*.js",
+                "${workspaceFolder}/src/node_modules/**/*.js",
+                "${workspaceFolder}/src/asserts/js/webpack:/app/webpack/**", //忽略webpack源码
+                "${workspaceFolder}/src/asserts/js/webpack:/app/node_modules/**" //忽略各种包文件源码
+            ] //跳过文件
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Edge Headless and attach DevTools",
+            "configurations": [
+                "Launch Microsoft Edge in headless mode",
+                "Open Edge DevTools"
+            ]
+        },
+        {
+            "name": "Launch Edge and attach DevTools",
+            "configurations": [
+                "Launch Microsoft Edge",
+                "Open Edge DevTools"
+            ]
+        }
+    ]
+}
+ 

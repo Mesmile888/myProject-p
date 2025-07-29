@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkpro_vip"]=self["webpackChunkpro_vip"]||[]).push([[4577],{59638:function(t,i,e){e.r(i),i["default"]={submit:"Submit","submit.ok":"Submitted","submit.error":"Submit Failed","confirm.ok":"Yes","confirm.cancel":"No","global.setting.title":"Settings"}}}]);
